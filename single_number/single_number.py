@@ -4,8 +4,18 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
-
-    pass
+    # Set up inner and outer loop to stay in one pass
+    for i in range(len(arr)):
+        # set condition to find duplicates
+        dupe = False
+        for n in range(len(arr)):
+            # Inner loop to check if the current number matches any other numbers in array
+            if i != n and arr[i] == arr[n]:
+                # if dupe is found, set condition to loop
+                dupe = True
+        # If dupe isn't found, exit loop
+        if not dupe:
+            return arr[i]
 
 
 if __name__ == '__main__':
