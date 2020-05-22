@@ -4,9 +4,19 @@ Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
     # Your code here
-
-    pass
-
+    newArr = []
+    for i in range(0, len(arr)):
+        count = 0
+        prod = 1
+        while len(newArr) <= i:
+            if count >= len(arr):
+                newArr.append(prod)
+            elif count == i:
+                count += 1
+            else:
+                prod *= arr[count]
+                count += 1
+    return newArr
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
